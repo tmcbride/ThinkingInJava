@@ -64,5 +64,6 @@ public class Fibonacci {
         //fib.calculateFibonacci();
         fib.calcFibRec();
 
+	System.out.println("Test");
     }
 }
