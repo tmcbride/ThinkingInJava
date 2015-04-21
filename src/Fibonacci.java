@@ -4,21 +4,30 @@
 public class Fibonacci {
     private int stop;
 
+    /**
+     * Constructor for Fibonacci Class
+     *
+     * @param setStop The number of digits/iterations to go through in the Fibonacci sequence
+     */
     public Fibonacci(int setStop) {
         stop = setStop;
     }
 
+    /**
+     * Non-recursive function that runs through the fibonacci sequence starting at 0 and going
+     * through the the number of interations set in the constructor.
+     */
     public void calculateFibonacci() {
-        int current = 1, previous1 = 0, previous2;
+        int current = 1, previous = 0, previous2;
 
         for (int itr = 0; itr < stop; itr++) {
 
             if (itr == 1) {
-                previous1 = current;
+                previous = current;
             } else if (itr > 1) {
-                previous2 = previous1;
-                previous1 = current;
-                current = previous1 + previous2;
+                previous2 = previous;
+                previous = current;
+                current = previous + previous2;
             }
 
             if (itr > 0) {
@@ -62,6 +71,7 @@ public class Fibonacci {
         int newCur = current;
         current += previous;
 
+        //recursive call with current and previous passed correctly
         calcFibRec(current, newCur, ++itr);
     }
 
@@ -69,12 +79,14 @@ public class Fibonacci {
      * Main function for Fibonacci sequence class
      *
      * @param args takes 1 value that is used to say how many digits are required for the fibonacci sequence.
+     *             Defaults to 5
      *
      */
     public static void main(String[] args) {
 
         int fibonacci;
 
+        //If no command line arguments are present, set the default to 5
         try {
             fibonacci = Integer.parseInt(args[0]);
         } catch (ArrayIndexOutOfBoundsException e) {
