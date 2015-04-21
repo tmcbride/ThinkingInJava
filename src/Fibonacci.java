@@ -9,7 +9,7 @@ public class Fibonacci {
     }
 
     public void calculateFibonacci() {
-        int current = 1, previous1 = 0, previous2 = 0;
+        int current = 1, previous1 = 0, previous2;
 
         for (int itr = 0; itr < stop; itr++) {
 
@@ -41,8 +41,17 @@ public class Fibonacci {
         calcFibRec(1, 0, 0);
     }
 
+    /**
+     * Recursive function for calculating the Fibonacci sequence.  Private function that
+     * is called by the overloaded function calcFibRec to initialize the values.
+     *
+     * @param current The current value of the sequence
+     * @param previous The last value of the sequence
+     * @param itr The current iteration to be compared to the stop to see how many
+     *            more iterations are required.
+     */
     private void calcFibRec(int current, int previous, int itr) {
-        if (itr > stop) {
+        if (itr >= stop) {
             return;
         } else if (itr > 0) {
             System.out.print(", ");
@@ -56,14 +65,26 @@ public class Fibonacci {
         calcFibRec(current, newCur, ++itr);
     }
 
+    /**
+     * Main function for Fibonacci sequence class
+     *
+     * @param args takes 1 value that is used to say how many digits are required for the fibonacci sequence.
+     *
+     */
     public static void main(String[] args) {
-        int fibonacci = Integer.parseInt(args[0]);
+
+        int fibonacci;
+
+        try {
+            fibonacci = Integer.parseInt(args[0]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            fibonacci = 5;
+        }
 
         Fibonacci fib = new Fibonacci(fibonacci);
 
         //fib.calculateFibonacci();
         fib.calcFibRec();
 
-	System.out.println("Test");
     }
 }
