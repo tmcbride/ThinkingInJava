@@ -1,16 +1,23 @@
+package com.troymcbride;
+
 /**
  * Created by tmcbride on 4/20/2015.
  */
+
 public class Fibonacci {
-    private int stop;
+    int stop;
 
     /**
-     * Constructor for Fibonacci Class
+     * Constructor for com.troymcbride.Fibonacci Class
      *
-     * @param setStop The number of digits/iterations to go through in the Fibonacci sequence
+     * @param setStop The number of digits/iterations to go through in the com.troymcbride.Fibonacci sequence
      */
     public Fibonacci(int setStop) {
         stop = setStop;
+    }
+
+    public Fibonacci() {
+        stop = 6;
     }
 
     /**
@@ -44,14 +51,14 @@ public class Fibonacci {
      * This is the only public function so that it can't be started from another
      * point
      *
-     * Recursive version of Fibonacci sequence above
+     * Recursive version of com.troymcbride.Fibonacci sequence above
      * */
-    public void calcFibRec() {
+    protected void calcFibRec() {
         calcFibRec(1, 0, 0);
     }
 
     /**
-     * Recursive function for calculating the Fibonacci sequence.  Private function that
+     * Recursive function for calculating the com.troymcbride.Fibonacci sequence.  Private function that
      * is called by the overloaded function calcFibRec to initialize the values.
      *
      * @param current The current value of the sequence
@@ -76,7 +83,7 @@ public class Fibonacci {
     }
 
     /**
-     * Main function for Fibonacci sequence class
+     * Main function for com.troymcbride.Fibonacci sequence class
      *
      * @param args takes 1 value that is used to say how many digits are required for the fibonacci sequence.
      *             Defaults to 5

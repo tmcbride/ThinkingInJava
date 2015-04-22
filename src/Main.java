@@ -1,3 +1,5 @@
+import com.troymcbride.Fibonacci;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -36,13 +38,13 @@ public class Main {
         System.out.println(spot);
         System.out.println(scruffy);
 
-        Dog sparky = spot;
+        //Dog sparky = spot;
 
-        System.out.println("sparky == spot: " + (sparky == spot));
-        System.out.println("sparky.equals(spot): " + (sparky.equals(spot)));
+//        System.out.println("sparky == spot: " + (sparky == spot));
+//        System.out.println("sparky.equals(spot): " + (sparky.equals(spot)));
 
-        System.out.println("sparky == scruffy: " + (sparky == scruffy));
-        System.out.println("sparky.equals(scruffy): " + (sparky.equals(scruffy)));
+//        System.out.println("sparky == scruffy: " + (sparky == scruffy));
+//        System.out.println("sparky.equals(scruffy): " + (sparky.equals(scruffy)));
 
         for (int i = 0; i < 10; i++) {
             System.out.println("Attempt " + i + ": " + x2.flipCoin());
@@ -53,7 +55,7 @@ public class Main {
         Fibonacci fib = new Fibonacci(7);
 
         //fib.calculateFibonacci();
-        fib.calcFibRec();
+        //fib.calcFibRec();
 
     }
 }
